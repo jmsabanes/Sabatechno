@@ -1,11 +1,15 @@
 $grisClaro: #F5F5F5
 $grisOscuro: #E4E4E4
+$azul: #005DA2
 
 *
   margin: 0
   padding: 0
   text-decoration: none
   list-style: none
+  font-family: 'Roboto', sans-serif
+p
+  font-family: 'Open Sans', sans-serif
 header
   position: absolute
   top: 0
@@ -19,19 +23,21 @@ header
     grid-area: logo
     align-self: center
     img
-      width: 300px
-      margin-left: 20px
+      width: 200px
+      margin-left: 50px
   nav
     grid-area: nav
     align-self: center
     justify-self: flex-end
     ul
       li
-        margin-right: 20px
+        margin-right: 50px
         display: inline-block
         a
           color: black
           color: white
+          font-size: 14px
+          font-weight: 300
 section.portada
   height: 720px
   display: grid
@@ -43,6 +49,16 @@ section.portada
   background-repeat: no-repeat
   background-size: cover
   background-attachment: fixed
+  span
+    font-weight: 300
+    font-size: 30px
+    justify-self: center
+    align-self: center
+    color: white
+  span.izquierda
+    grid-area: arrow-l
+  span.derecha
+    grid-area: arrow-r
   h2
     grid-area: h2
     align-self: flex-end
@@ -58,37 +74,143 @@ section.portada
     margin-right: 20%
     color: white
 section.quienes-somos
-  height: 720px
+  height: 500px
   display: grid
   grid-template-rows: 1fr 1fr
   grid-template-areas: "h2" "p"
   padding-left: 20%
   padding-right: 20%
   text-align: center
-  background: $grisClaro
+  background-color: $grisClaro
+
   h2
     align-self: flex-end
     justify-self: center
     margin-bottom: 20px
+    font-size: 23px
   p
     align-self: flex-start
     justify-self: center
+    font-size: 15px
 section.servicios
-  position: relative
   height: 600px
   display: grid
   grid-template-columns: repeat(5, 1fr)
+  align-items: center
   background: $grisOscuro
+  background-image: url(../img/svg/fondo.svg)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: bottom
+  background-attachment: fixed
   article
-    margin-left: 20px
-    margin-right: 20px
+    margin-left: 40px
+    margin-right: 40px
     text-align: center
+
     div
-      margin: -100px auto 30px auto
-      width: 200px
-      height: 200px
+      margin: 0px auto 30px auto
+      width: 150px
+      height: 150px
       background: white
       border-radius: 50%
+      border: 1px solid $azul
+      box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.32)
+      background-position: center
+      background-repeat: no-repeat
+      background-size: 110%
     h3
       margin-bottom: 10px
+      color: $azul
+      font-size: 20px
     p
+      font-size: 13px
+    div.prod-y-serv
+      background-image: url(../img/svg/productos.svg)
+    div.telefonia
+      background-image: url(../img/svg/telefonia.svg)
+    div.insumos
+      background-image: url(../img/svg/insumos.svg)
+    div.sist-seguridad
+      background-image: url(../img/svg/seguridad.svg)
+    a
+      color: $azul
+      font-size: 15px
+      border: 2px solid $azul
+      display: inline-block
+      padding: 10px 20px
+      margin-top: 10px
+      border-radius: 5px
+section.slider
+  display: grid
+  align-items: center
+  width: 100%
+  height: 450px
+  overflow: hidden
+  background: $grisClaro
+  div.cont-slider
+    display: flex
+    align-items: center
+    width: 200%
+    border: 3px solid $azul
+    border-left: none
+    img
+      width: 350px
+      height: 350px
+      display: inline-block
+section.contacto
+  display: grid
+  justify-content: center
+  background: $grisOscuro
+  padding-top: 40px
+  padding-bottom: 40px
+  h3
+    justify-self: center
+    margin-bottom: 20px
+    color: $azul
+  form
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: repeat(5, auto)
+    grid-gap: 10px
+    grid-template-areas: "nombre apellido" "email email" "telefono telefono" "notas notas" "submit submit"
+    width: 500px
+    input, textarea
+      height: 40px
+      border: 1px solid rgb(204, 204, 204)
+      border-radius: 5px
+      padding-left: 10px
+      font-weight: 300
+
+      font-size: 15px
+    .nombre
+      grid-area: nombre
+    .apellido
+      grid-area: apellido
+    .email
+      grid-area: email
+    .telefono
+      grid-area: telefono
+    textarea.textarea
+      height: 120px
+      max-width: 498px
+      grid-area: notas
+      padding-top: 5px
+    .submit
+      justify-self: center
+      grid-area: submit
+      width: 200px
+      padding: 10px 20px
+      border: 2px solid $azul
+      background: none
+      color: $azul
+footer
+  display: grid
+  grid-template-columns: 400px 1fr 1fr
+  align-items: center
+  width: 100%
+  height: 200px
+  background: #001B2D
+  img
+    justify-self: center
+    width: 300px
